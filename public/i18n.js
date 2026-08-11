@@ -167,6 +167,26 @@ const I18N_STRINGS = {
       "Hayır. Detectra bir yardımcı araçtır ve akademik, hukuki veya mesleki bir karar için tek başına dayanak oluşturmaz. Nihai değerlendirmeyi her zaman bir insan yapmalıdır.",
 
     // Terms page
+    // Contact page
+    eyebrow_contact: "İletişim",
+    contact_h: "Bize ulaş",
+    contact_p:
+      "Bir sorun, bir öneri ya da bir iş birliği fikrin mi var? Formu doldur, e-posta uygulamanla hazır bir mesaj oluşturalım.",
+    contact_name: "Adın",
+    contact_name_ph: "Adın Soyadın",
+    contact_email: "E-postan",
+    contact_email_ph: "ornek@eposta.com",
+    contact_subject: "Konu",
+    contact_subject_ph: "Mesajının konusu",
+    contact_message: "Mesajın",
+    contact_message_ph: "Bize iletmek istediklerini yaz…",
+    contact_send: "E-posta oluştur",
+    contact_default_subject: "Detectra — İletişim",
+    contact_success: "E-posta uygulaman hazır mesajla açılıyor…",
+    contact_direct_h: "Doğrudan yaz",
+    contact_direct_p:
+      "Formu kullanmak istemiyorsan e-posta adresime doğrudan yazabilirsin.",
+
     eyebrow_terms: "Yasal",
     terms_h: "Kullanım Şartları & Gizlilik",
     terms_updated: "Son güncelleme: 11 Ağustos 2026",
@@ -372,6 +392,26 @@ const I18N_STRINGS = {
       "No. Detectra is an assistive tool and does not on its own constitute grounds for an academic, legal or professional decision. The final judgment should always be made by a human.",
 
     // Terms page
+    // Contact page
+    eyebrow_contact: "Contact",
+    contact_h: "Get in touch",
+    contact_p:
+      "Have a problem, a suggestion, or a collaboration idea? Fill out the form and we'll draft a ready-to-send message in your email app.",
+    contact_name: "Your name",
+    contact_name_ph: "Your full name",
+    contact_email: "Your email",
+    contact_email_ph: "example@email.com",
+    contact_subject: "Subject",
+    contact_subject_ph: "Subject of your message",
+    contact_message: "Your message",
+    contact_message_ph: "Write what you'd like to tell us…",
+    contact_send: "Compose email",
+    contact_default_subject: "Detectra — Contact",
+    contact_success: "Opening your email app with a ready message…",
+    contact_direct_h: "Write directly",
+    contact_direct_p:
+      "If you'd rather not use the form, you can email me directly.",
+
     eyebrow_terms: "Legal",
     terms_h: "Terms of Use & Privacy",
     terms_updated: "Last updated: August 11, 2026",

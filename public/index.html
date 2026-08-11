@@ -38,7 +38,7 @@
           <a href="#/hakkimda" data-link data-route="about" data-i18n="nav_about">Hakkımda</a>
           <a href="#/sss" data-link data-route="faq" data-i18n="nav_faq">SSS</a>
           <a href="#/sartlar" data-link data-route="terms" data-i18n="nav_terms">Şartlar</a>
-          <a href="https://alpertasdemir.com" target="_blank" rel="noopener" class="nav-ext" data-i18n="nav_contact">İletişim</a>
+          <a href="#/iletisim" data-link data-route="contact" data-i18n="nav_contact">İletişim</a>
         </nav>
 
         <div class="topbar-right">
@@ -567,6 +567,59 @@
         </div>
       </section>
 
+      <section class="page" data-page="contact">
+        <div class="container container-narrow">
+          <section class="page-hero">
+            <span class="eyebrow" data-i18n="eyebrow_contact">İletişim</span>
+            <h1 data-i18n="contact_h">Bize ulaş</h1>
+            <p data-i18n="contact_p">
+              Bir sorun, bir öneri ya da bir iş birliği fikrin mi var? Formu
+              doldur, e-posta uygulamanla hazır bir mesaj oluşturalım.
+            </p>
+          </section>
+
+          <div class="contact-grid">
+            <form class="contact-form" id="contactForm">
+              <div class="field">
+                <label for="cfName" data-i18n="contact_name">Adın</label>
+                <input type="text" id="cfName" class="field-input" required
+                  data-i18n-ph="contact_name_ph" placeholder="Adın Soyadın" />
+              </div>
+              <div class="field">
+                <label for="cfEmail" data-i18n="contact_email">E-postan</label>
+                <input type="email" id="cfEmail" class="field-input" required
+                  data-i18n-ph="contact_email_ph" placeholder="ornek@eposta.com" />
+              </div>
+              <div class="field">
+                <label for="cfSubject" data-i18n="contact_subject">Konu</label>
+                <input type="text" id="cfSubject" class="field-input"
+                  data-i18n-ph="contact_subject_ph" placeholder="Mesajının konusu" />
+              </div>
+              <div class="field">
+                <label for="cfMessage" data-i18n="contact_message">Mesajın</label>
+                <textarea id="cfMessage" class="field-input field-textarea" required
+                  data-i18n-ph="contact_message_ph"
+                  placeholder="Bize iletmek istediklerini yaz…"></textarea>
+              </div>
+              <button type="submit" class="btn-primary btn-lg">
+                <span class="btn-label" data-i18n="contact_send">E-posta oluştur</span>
+              </button>
+            </form>
+
+            <aside class="contact-aside">
+              <h2 data-i18n="contact_direct_h">Doğrudan yaz</h2>
+              <p data-i18n="contact_direct_p">
+                Formu kullanmak istemiyorsan e-posta adresime doğrudan
+                yazabilirsin.
+              </p>
+              <a href="mailto:alpertasdemir32@gmail.com" class="chip">
+                ✉ alpertasdemir32@gmail.com
+              </a>
+            </aside>
+          </div>
+        </div>
+      </section>
+
       <div class="toast" id="toast" role="alert"></div>
     </main>
 
@@ -584,7 +637,7 @@
           <a href="#/hakkimda" data-link data-i18n="nav_about">Hakkımda</a>
           <a href="#/sss" data-link data-i18n="nav_faq">SSS</a>
           <a href="#/sartlar" data-link data-i18n="nav_terms">Şartlar</a>
-          <a href="https://alpertasdemir.com" target="_blank" rel="noopener" data-i18n="nav_contact">İletişim</a>
+          <a href="#/iletisim" data-link data-i18n="nav_contact">İletişim</a>
         </nav>
       </div>
       <p class="footer-fine" data-i18n="footer_fine">

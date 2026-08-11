@@ -30,6 +30,7 @@ const ROUTES = {
   "/hakkimda": "about",
   "/sss": "faq",
   "/sartlar": "terms",
+  "/iletisim": "contact",
 };
 
 function currentPath() {
@@ -345,6 +346,29 @@ function escapeHtml(str) {
   const div = document.createElement("div");
   div.textContent = str;
   return div.innerHTML;
+}
+
+// İletişim formu — girdilerden bir mailto bağlantısı oluşturup
+// kullanıcının e-posta uygulamasını hazır mesajla açar.
+const contactForm = $("#contactForm");
+if (contactForm) {
+  contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const name = $("#cfName").value.trim();
+    const email = $("#cfEmail").value.trim();
+    const subject = $("#cfSubject").value.trim() || t("contact_default_subject");
+    const message = $("#cfMessage").value.trim();
+
+    const body =
+      `${message}\n\n—\n${name}` + (email ? ` · ${email}` : "");
+    const href =
+      `mailto:alpertasdemir32@gmail.com?subject=${encodeURIComponent(
+        subject
+      )}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = href;
+    showToast(t("contact_success"), "ok");
+  });
 }
 
 // Dil değişince i18n.js data-i18n metinlerini yeniler; burada
