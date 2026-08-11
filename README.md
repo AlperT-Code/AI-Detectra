@@ -18,6 +18,10 @@
 
 ---
 
+<p align="center"><img src="img/img3.png" width="480" alt="Detectra home page"></p>
+
+<br>
+
 <h1 align="center" id="-english">🌐 English</h1>
 <hr>
 
@@ -60,13 +64,13 @@
 
 ## 📸 Screenshots
 
-<p align="center"><img src="img/img4.png" width="900" alt="Detectra English home page"></p>
+<p align="center"><img src="img/img4.png" width="640" alt="Detectra English home page"></p>
 <p align="center"><em>English home experience — landing page, CTAs and feature summary.</em></p>
 
-<p align="center"><img src="img/img5.png" width="900" alt="Detectra English detector tool"></p>
+<p align="center"><img src="img/img5.png" width="640" alt="Detectra English detector tool"></p>
 <p align="center"><em>English detector interface — text/image mode selector and upload flow.</em></p>
 
-<p align="center"><img src="img/img6.png" width="900" alt="Detectra English result view"></p>
+<p align="center"><img src="img/img6.png" width="640" alt="Detectra English result view"></p>
 <p align="center"><em>English result panel — verdict, confidence ring and indicator breakdown.</em></p>
 
 ## ⚙️ How it works
@@ -180,13 +184,13 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## 📸 Ekran Görüntüleri
 
-<p align="center"><img src="img/img1.png" width="900" alt="Detectra Türkçe ana sayfa"></p>
+<p align="center"><img src="img/img1.png" width="640" alt="Detectra Türkçe ana sayfa"></p>
 <p align="center"><em>Türkçe ana sayfa — gövde metni, CTA butonları ve istatistik kartı.</em></p>
 
-<p align="center"><img src="img/img2.png" width="900" alt="Detectra Türkçe denetim aracı"></p>
+<p align="center"><img src="img/img2.png" width="640" alt="Detectra Türkçe denetim aracı"></p>
 <p align="center"><em>Türkçe denetim aracı — metni yapıştırın ya da görsel bırakın, ardından sonuç panelini görün.</em></p>
 
-<p align="center"><img src="img/img3.png" width="900" alt="Detectra Türkçe sonuç paneli"></p>
+<p align="center"><img src="img/img3.png" width="640" alt="Detectra Türkçe sonuç paneli"></p>
 <p align="center"><em>Türkçe sonuç paneli — karar, güven oranı ve somut ipuçları.</em></p>
 
 ## ⚙️ Nasıl Çalışıyor
