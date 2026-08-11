@@ -1,7 +1,7 @@
 {
-  "name": "ai-detector",
+  "name": "detectra-ai",
   "version": "1.0.0",
-  "description": "Metin ve gorsellerin yapay zeka tarafindan uretilip uretilmedigini Groq ile denetleyen web araci",
+  "description": "Detectra AI: Groq API destekli metin ve görsel yapay zeka tespit aracı",
   "type": "module",
   "main": "server.js",
   "scripts": {
