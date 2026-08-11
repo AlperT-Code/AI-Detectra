@@ -18,10 +18,6 @@
 
 ---
 
-<p align="center"><img src="img/img3.png" width="720" alt="Detectra home page"></p>
-
-<br>
-
 <h1 align="center" id="-english">🌐 English</h1>
 <hr>
 
