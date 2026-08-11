@@ -1,0 +1,15 @@
+{
+  "name": "ai-detector",
+  "version": "1.0.0",
+  "description": "Metin ve gorsellerin yapay zeka tarafindan uretilip uretilmedigini Groq ile denetleyen web araci",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  }
+}

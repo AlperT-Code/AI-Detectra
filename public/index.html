@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detectra — Yapay Zeka Denetim Aracı</title>
+    <meta
+      name="description"
+      content="Metin ve görsellerin yapay zeka tarafından üretilip üretilmediğini saniyeler içinde tespit et. Groq ile güçlendirilmiş, gizli ve ücretsiz."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="i18n.js"></script>
+  </head>
+  <body>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-orb orb-1" aria-hidden="true"></div>
+    <div class="bg-orb orb-2" aria-hidden="true"></div>
+    <div class="bg-orb orb-3" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="#/" data-link>
+          <div class="brand-mark" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <span class="brand-name">Detectra</span>
+        </a>
+
+        <nav class="nav" id="nav">
+          <a href="#/" data-link data-route="home" data-i18n="nav_home">Ana Sayfa</a>
+          <a href="#/denetim" data-link data-route="tool" data-i18n="nav_tool">Denetim</a>
+          <a href="#/hakkimda" data-link data-route="about" data-i18n="nav_about">Hakkımda</a>
+          <a href="#/sss" data-link data-route="faq" data-i18n="nav_faq">SSS</a>
+          <a href="#/sartlar" data-link data-route="terms" data-i18n="nav_terms">Şartlar</a>
+          <a href="mailto:alpertasdemir32@gmail.com" class="nav-ext" data-i18n="nav_contact">İletişim</a>
+        </nav>
+
+        <div class="topbar-right">
+          <span class="pill" id="statusPill">
+            <span class="dot"></span> <span id="statusText">Groq bağlanıyor…</span>
+          </span>
+          <button
+            class="lang-toggle"
+            id="langToggle"
+            type="button"
+            aria-label="Dili değiştir"
+          >
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2m6.93 6h-2.95a15.65 15.65 0 0 0-1.38-3.56A8 8 0 0 1 18.92 8M12 4.04A13.7 13.7 0 0 1 13.9 8h-3.8A13.7 13.7 0 0 1 12 4.04M4.26 14a7.8 7.8 0 0 1 0-4h3.38a16.5 16.5 0 0 0 0 4M5.08 16h2.95a15.65 15.65 0 0 0 1.38 3.56A8 8 0 0 1 5.08 16m2.95-8H5.08a8 8 0 0 1 4.33-3.56A15.65 15.65 0 0 0 8.03 8M12 19.96A13.7 13.7 0 0 1 10.1 16h3.8A13.7 13.7 0 0 1 12 19.96M14.34 14H9.66a14.6 14.6 0 0 1 0-4h4.68a14.6 14.6 0 0 1 0 4m.25 5.56A15.65 15.65 0 0 0 15.97 16h2.95a8 8 0 0 1-4.33 3.56M16.36 14a16.5 16.5 0 0 0 0-4h3.38a7.8 7.8 0 0 1 0 4Z"/></svg>
+            <span id="langLabel">EN</span>
+          </button>
+          <a href="#/denetim" data-link class="nav-cta" data-i18n="nav_cta">Denetle</a>
+          <button
+            class="nav-toggle"
+            id="navToggle"
+            aria-label="Menüyü aç/kapat"
+            aria-expanded="false"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="page" data-page="home">
+        <div class="container">
+          <section class="hero">
+            <span class="hero-badge" data-i18n="hero_badge">⚡ Groq ile güçlendirildi</span>
+            <h1 class="hero-title">Detectra</h1>
+            <p class="hero-tagline" data-i18n-html="hero_tagline">
+              Bunu <span class="grad">yapay zeka</span> mı yoksa
+              <span class="grad-2">insan</span> mı yaptı?
+            </p>
+            <p class="hero-sub" data-i18n="hero_sub">
+              Detectra, metin ve görsellerin yapay zeka tarafından üretilip
+              üretilmediğini saniyeler içinde analiz eder; sana güven skoru ve
+              somut ipuçları sunar.
+            </p>
+            <div class="hero-actions">
+              <a href="#/denetim" data-link class="btn-primary btn-lg">
+                <span class="btn-label" data-i18n="hero_cta1">Hemen Denetle</span>
+              </a>
+              <a href="#/hakkimda" data-link class="btn-ghost btn-lg" data-i18n="hero_cta2"
+                >Nasıl çalışır?</a
+              >
+            </div>
+
+            <div class="stat-row">
+              <div class="stat">
+                <span class="stat-num">2</span>
+                <span class="stat-lbl" data-i18n="stat_lbl1">AI modeli</span>
+              </div>
+              <div class="stat-div" aria-hidden="true"></div>
+              <div class="stat">
+                <span class="stat-num" data-i18n="stat_num2">~2sn</span>
+                <span class="stat-lbl" data-i18n="stat_lbl2">ortalama analiz</span>
+              </div>
+              <div class="stat-div" aria-hidden="true"></div>
+              <div class="stat">
+                <span class="stat-num" data-i18n="stat_num3">%100</span>
+                <span class="stat-lbl" data-i18n="stat_lbl3">tarayıcıda, kayıtsız</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="section">
+            <div class="section-head">
+              <span class="eyebrow" data-i18n="eyebrow_how">Nasıl çalışır</span>
+              <h2 data-i18n="how_h">Üç adımda sonuç</h2>
+            </div>
+            <div class="steps">
+              <div class="step">
+                <div class="step-no">01</div>
+                <h3 data-i18n="step1_h">İçeriği ver</h3>
+                <p data-i18n="step1_p">
+                  Analiz etmek istediğin metni yapıştır ya da görseli sürükleyip
+                  bırak. Hiçbir kayıt tutulmaz.
+                </p>
+              </div>
+              <div class="step">
+                <div class="step-no">02</div>
+                <h3 data-i18n="step2_h">Model analiz eder</h3>
+                <p data-i18n="step2_p">
+                  Groq üzerinde çalışan gelişmiş modeller, üslup ve görsel
+                  kusurları adli bir titizlikle inceler.
+                </p>
+              </div>
+              <div class="step">
+                <div class="step-no">03</div>
+                <h3 data-i18n="step3_h">Skor ve ipuçları</h3>
+                <p data-i18n="step3_p">
+                  Yapay zeka mı insan mı olduğunu, güven yüzdesini ve tespit
+                  edilen somut ipuçlarını görürsün.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="section">
+            <div class="section-head">
+              <span class="eyebrow" data-i18n="eyebrow_feat">Özellikler</span>
+              <h2 data-i18n="feat_h">Detectra ne sunar?</h2>
+            </div>
+            <div class="feature-grid">
+              <article class="feature-card">
+                <div class="feature-ic">
+                  <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M3 5h18v2H3V5m0 6h18v2H3v-2m0 6h12v2H3v-2Z"/></svg>
+                </div>
+                <h3 data-i18n="feat1_h">Metin denetimi</h3>
+                <p data-i18n="feat1_p">
+                  Kalıplaşmış cümleler, aşırı cila ve yapay denge gibi AI
+                  imzalarını yakalar.
+                </p>
+              </article>
+              <article class="feature-card">
+                <div class="feature-ic">
+                  <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2M8.5 13.5l2.5 3 3.5-4.5 4.5 6H5l3.5-4.5Z"/></svg>
+                </div>
+                <h3 data-i18n="feat2_h">Görsel denetimi</h3>
+                <p data-i18n="feat2_p">
+                  Anatomik hatalar, plastik dokular ve tutarsız ışık gibi
+                  ipuçlarını analiz eder.
+                </p>
+              </article>
+              <article class="feature-card">
+                <div class="feature-ic">
+                  <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2m0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8m1-13h-2v6l5.25 3.15 1-1.64-4.25-2.52Z"/></svg>
+                </div>
+                <h3 data-i18n="feat3_h">Güven skoru</h3>
+                <p data-i18n="feat3_p">
+                  Her sonuç, animasyonlu bir güven halkasıyla 0–100 arası bir
+                  yüzdeyle gelir.
+                </p>
+              </article>
+              <article class="feature-card">
+                <div class="feature-ic">
+                  <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4m0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11V11.99Z"/></svg>
+                </div>
+                <h3 data-i18n="feat4_h">Gizlilik odaklı</h3>
+                <p data-i18n="feat4_p">
+                  Gönderdiğin içerik veritabanına yazılmaz; yalnızca anlık analiz
+                  için işlenir.
+                </p>
+              </article>
+              <article class="feature-card">
+                <div class="feature-ic">
+                  <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.07-.12C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 17.55 11 21 11 21Z"/></svg>
+                </div>
+                <h3 data-i18n="feat5_h">Groq hızı</h3>
+                <p data-i18n="feat5_p">
+                  Groq'un düşük gecikmeli altyapısı sayesinde sonuçlar saniyeler
+                  içinde döner.
+                </p>
+              </article>
+              <article class="feature-card">
+                <div class="feature-ic">
+                  <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                </div>
+                <h3 data-i18n="feat6_h">Somut ipuçları</h3>
+                <p data-i18n="feat6_p">
+                  Sadece bir etiket değil; kararın arkasındaki gerekçeleri madde
+                  madde gösterir.
+                </p>
+              </article>
+            </div>
+          </section>
+
+          <section class="cta-band">
+            <h2 data-i18n="cta_h">Şüphelendiğin içeriği hemen denetle</h2>
+            <p data-i18n="cta_p">Kurulum yok, kayıt yok. Yapıştır, sürükle, öğren.</p>
+            <a href="#/denetim" data-link class="btn-primary btn-lg">
+              <span class="btn-label" data-i18n="cta_btn">Denetime Başla</span>
+            </a>
+          </section>
+        </div>
+      </section>
+
+      <section class="page" data-page="tool">
+        <div class="container">
+          <section class="page-hero">
+            <span class="eyebrow" data-i18n="eyebrow_tool">Denetim aracı</span>
+            <h1 data-i18n="tool_h">İçeriğini analiz et</h1>
+            <p data-i18n="tool_p">
+              Metni yapıştır ya da görseli sürükle. Saniyeler içinde detaylı bir
+              analiz, güven skoru ve somut ipuçları al.
+            </p>
+          </section>
+
+          <div class="tabs" role="tablist">
+            <button class="tab active" data-tab="text" role="tab">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M3 5h18v2H3V5m0 6h18v2H3v-2m0 6h12v2H3v-2Z"/></svg>
+              <span data-i18n="tab_text">Metin Denetimi</span>
+            </button>
+            <button class="tab" data-tab="image" role="tab">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2M8.5 13.5l2.5 3 3.5-4.5 4.5 6H5l3.5-4.5Z"/></svg>
+              <span data-i18n="tab_image">Görsel Denetimi</span>
+            </button>
+            <div class="tab-glider"></div>
+          </div>
+
+          <div class="workspace">
+            <section class="panel active" id="panel-text">
+              <div class="panel-head">
+                <h2 data-i18n="panel_text_h">Metni buraya yapıştır</h2>
+                <span class="char-count" id="charCount">0 karakter</span>
+              </div>
+              <textarea
+                id="textInput"
+                class="text-input"
+                data-i18n-ph="text_ph"
+                placeholder="Analiz etmek istediğin yazıyı buraya yapıştır… (en az 20 karakter)"
+              ></textarea>
+              <div class="panel-actions">
+                <button class="btn-ghost" id="sampleBtn" data-i18n="sample_btn">Örnek metin dene</button>
+                <button class="btn-primary" id="analyzeTextBtn">
+                  <span class="btn-label" data-i18n="analyze_btn">Denetle</span>
+                  <span class="btn-spinner"></span>
+                </button>
+              </div>
+            </section>
+
+            <section class="panel" id="panel-image">
+              <div
+                class="dropzone"
+                id="dropzone"
+                role="button"
+                tabindex="0"
+                data-i18n-aria="dz_aria"
+                aria-label="Görsel yükle"
+              >
+                <input type="file" id="fileInput" accept="image/*" hidden />
+                <div class="dz-empty" id="dzEmpty">
+                  <svg viewBox="0 0 24 24" width="42" height="42"><path fill="currentColor" d="M19 13v6H5v-6H3v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6h-2M12 2 6.46 7.46l1.42 1.42L11 5.75V16h2V5.75l3.13 3.13 1.42-1.42L12 2Z"/></svg>
+                  <p data-i18n-html="dz_empty"><strong>Görseli sürükle</strong> ya da seçmek için tıkla</p>
+                  <span data-i18n="dz_hint">PNG, JPG, WEBP · maks. 10 MB</span>
+                </div>
+                <div class="dz-preview" id="dzPreview" hidden>
+                  <img id="previewImg" alt="Yüklenen görsel önizlemesi" />
+                  <button
+                    class="dz-clear"
+                    id="clearImgBtn"
+                    aria-label="Görseli kaldır"
+                  >
+                    ✕
+                  </button>
+                </div>
+              </div>
+              <div class="panel-actions">
+                <span class="hint" id="fileHint"></span>
+                <button class="btn-primary" id="analyzeImageBtn" disabled>
+                  <span class="btn-label" data-i18n="analyze_btn">Denetle</span>
+                  <span class="btn-spinner"></span>
+                </button>
+              </div>
+            </section>
+
+            <aside class="result-card" id="resultCard" aria-live="polite">
+              <div class="result-empty" id="resultEmpty">
+                <div class="scan-anim" aria-hidden="true">
+                  <div class="scan-line"></div>
+                </div>
+                <p data-i18n="result_empty_h">Sonuçlar burada görünecek</p>
+                <span data-i18n="result_empty_p">Analiz için içerik gönder</span>
+              </div>
+
+              <div class="result-content" id="resultContent" hidden>
+                <div class="verdict-ring" id="verdictRing">
+                  <svg viewBox="0 0 120 120" class="ring-svg">
+                    <circle class="ring-track" cx="60" cy="60" r="52" />
+                    <circle class="ring-fill" id="ringFill" cx="60" cy="60" r="52" />
+                  </svg>
+                  <div class="ring-center">
+                    <span class="ring-pct" id="ringPct">0%</span>
+                    <span class="ring-lbl" data-i18n="ring_lbl">güven</span>
+                  </div>
+                </div>
+
+                <div class="verdict-label" id="verdictLabel">—</div>
+                <p class="verdict-explain" id="verdictExplain"></p>
+
+                <div class="indicators" id="indicators"></div>
+
+                <div class="result-meta" id="resultMeta"></div>
+              </div>
+            </aside>
+          </div>
+
+          <p class="tool-note" data-i18n="tool_note">
+            Detectra bir tahmin aracıdır — sonuçlar kesin kanıt değil, olasılık
+            tabanlı bir değerlendirmedir.
+          </p>
+        </div>
+      </section>
+
+      <section class="page" data-page="about">
+        <div class="container container-narrow">
+          <section class="page-hero">
+            <span class="eyebrow" data-i18n="eyebrow_about">Hakkımda</span>
+            <h1 data-i18n="about_h">Detectra'nın arkasındaki hikâye</h1>
+            <p data-i18n="about_p">
+              Yapay zekanın ürettiği içerik günden güne artıyor. Detectra, bu
+              içeriği ayırt etmeyi herkes için basit ve erişilebilir kılmak için
+              geliştirildi.
+            </p>
+          </section>
+
+          <div class="about-card">
+            <div class="about-avatar" aria-hidden="true">AT</div>
+            <div class="about-body">
+              <h2>Alper Taşdemir</h2>
+              <p class="about-role" data-i18n="about_role">Geliştirici · Detectra'nın kurucusu</p>
+              <p data-i18n="about_bio">
+                Yapay zeka ve web teknolojilerine ilgi duyan bir geliştiriciyim.
+                Detectra'yı, yapay zeka üretimi metin ve görsellerin gerçeklerden
+                ayırt edilmesinin giderek zorlaştığını fark ettiğim için
+                geliştirdim. Amacım; karmaşık modelleri sade, hızlı ve herkesin
+                kullanabileceği bir araca dönüştürmek.
+              </p>
+              <div class="about-links">
+                <a href="mailto:alpertasdemir32@gmail.com" class="chip">
+                  ✉ alpertasdemir32@gmail.com
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="prose">
+            <h2 data-i18n="about_mission_h">Misyonumuz</h2>
+            <p data-i18n="about_mission_p">
+              Yapay zeka artık haber metinlerinden ödevlere, sosyal medya
+              görsellerinden reklamlara kadar her yerde. Neyin insan neyin makine
+              üretimi olduğunu bilmek, medya okuryazarlığının yeni bir parçası
+              hâline geldi. Detectra bu farkındalığı güçlendirmeyi hedefler —
+              suçlamak için değil, bilgilendirmek için.
+            </p>
+
+            <h2 data-i18n="about_how_h">Nasıl çalışıyor?</h2>
+            <p data-i18n="about_how_p">
+              Detectra, tarayıcından gelen içeriği kendi sunucusu üzerinden
+              Groq'un yüksek hızlı çıkarım altyapısına iletir. Metinler için
+              gelişmiş bir dil modeli üslup analizini; görseller için ise bir
+              görüntü modeli anatomik ve dokusal tutarlılığı inceler. Model, adli
+              bir analist gibi düşünür ve kararını güven yüzdesiyle birlikte
+              gerekçelendirir.
+            </p>
+
+            <h2 data-i18n="about_tech_h">Kullandığımız teknolojiler</h2>
+            <ul class="tech-list">
+              <li data-i18n-html="tech1"><strong>Node.js + Express</strong> — hafif ve hızlı sunucu</li>
+              <li data-i18n-html="tech2"><strong>Groq API</strong> — düşük gecikmeli AI çıkarımı</li>
+              <li data-i18n-html="tech3"><strong>Saf HTML/CSS/JS</strong> — çerçevesiz, hızlı arayüz</li>
+            </ul>
+
+            <h2 data-i18n="about_trans_h">Şeffaflık</h2>
+            <p data-i18n="about_trans_p">
+              Hiçbir tespit aracı kusursuz değildir. Detectra sonuçları bir
+              olasılık değerlendirmesidir ve kesin kanıt olarak
+              kullanılmamalıdır. Aracı sürekli geliştirmeye devam ediyoruz.
+            </p>
+          </div>
+
+          <div class="cta-band cta-inline">
+            <h2 data-i18n="about_cta_h">Bir sorun mu var, bir fikrin mi?</h2>
+            <p data-i18n="about_cta_p">Geri bildirimlerin Detectra'yı daha iyi yapıyor.</p>
+            <a href="mailto:alpertasdemir32@gmail.com" class="btn-primary btn-lg">
+              <span class="btn-label" data-i18n="about_cta_btn">İletişime Geç</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="page" data-page="faq">
+        <div class="container container-narrow">
+          <section class="page-hero">
+            <span class="eyebrow" data-i18n="eyebrow_faq">Sıkça sorulan sorular</span>
+            <h1 data-i18n="faq_h">Aklına takılanlar</h1>
+            <p data-i18n="faq_p">
+              Detectra hakkında en çok merak edilenleri burada topladık.
+              Cevabını bulamadığın bir soru varsa bize yazabilirsin.
+            </p>
+          </section>
+
+          <div class="faq" id="faq">
+            <details class="faq-item">
+              <summary data-i18n="faq_q1">Detectra nedir?</summary>
+              <div class="faq-a" data-i18n="faq_a1">
+                Detectra; bir metnin veya görselin yapay zeka tarafından mı
+                yoksa bir insan tarafından mı üretildiğini tahmin eden ücretsiz
+                bir denetim aracıdır. Sonuçları bir güven skoru ve somut
+                ipuçlarıyla birlikte sunar.
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary data-i18n="faq_q2">Sonuçlar ne kadar doğru?</summary>
+              <div class="faq-a" data-i18n="faq_a2">
+                Detectra olasılık temelli çalışır. Belirgin yapay zeka
+                işaretleri taşıyan içeriklerde oldukça isabetlidir; ancak çok
+                iyi düzenlenmiş metinlerde veya son derece gerçekçi görsellerde
+                yanılabilir. Sonuçları kesin bir kanıt değil, güçlü bir ipucu
+                olarak değerlendir.
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary data-i18n="faq_q3">Gönderdiğim içerik saklanıyor mu?</summary>
+              <div class="faq-a" data-i18n="faq_a3">
+                Hayır. Girdiğin metin ve görseller yalnızca anlık analiz için
+                işlenir; bir veritabanına kaydedilmez. Analiz tamamlandıktan
+                sonra içerik sunucuda tutulmaz.
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary data-i18n="faq_q4">Hangi yapay zeka modellerini kullanıyorsunuz?</summary>
+              <div class="faq-a" data-i18n="faq_a4">
+                Metin analizi için Groq üzerinde çalışan gelişmiş bir dil
+                modeli, görsel analizi için ise bir görüntü (vision) modeli
+                kullanılır. Modeller, hız ve doğruluk dengesine göre zaman zaman
+                güncellenebilir.
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary data-i18n="faq_q5">Detectra ücretsiz mi?</summary>
+              <div class="faq-a" data-i18n="faq_a5">
+                Evet, Detectra'yı kullanmak tamamen ücretsizdir. Herhangi bir
+                kayıt veya kredi kartı gerektirmez.
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary data-i18n="faq_q6">Hangi dosya türlerini yükleyebilirim?</summary>
+              <div class="faq-a" data-i18n="faq_a6">
+                Görsel denetiminde PNG, JPG ve WEBP formatlarını, en fazla 10 MB
+                boyutunda destekliyoruz. Metin denetiminde ise en az 20
+                karakterlik bir yazı girmen yeterli.
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary data-i18n="faq_q7">Sonucu resmi bir kanıt olarak kullanabilir miyim?</summary>
+              <div class="faq-a" data-i18n="faq_a7">
+                Hayır. Detectra bir yardımcı araçtır ve akademik, hukuki veya
+                mesleki bir karar için tek başına dayanak oluşturmaz. Nihai
+                değerlendirmeyi her zaman bir insan yapmalıdır.
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="page" data-page="terms">
+        <div class="container container-narrow">
+          <section class="page-hero">
+            <span class="eyebrow" data-i18n="eyebrow_terms">Yasal</span>
+            <h1 data-i18n="terms_h">Kullanım Şartları & Gizlilik</h1>
+            <p data-i18n="terms_updated">Son güncelleme: 11 Ağustos 2026</p>
+          </section>
+
+          <div class="prose">
+            <h2 data-i18n="terms_1_h">1. Hizmetin tanımı</h2>
+            <p data-i18n="terms_1_p">
+              Detectra ("Hizmet"), kullanıcıların girdiği metin ve görsellerin
+              yapay zeka tarafından üretilip üretilmediğine dair olasılık temelli
+              bir değerlendirme sunan bir web aracıdır. Hizmeti kullanarak bu
+              şartları kabul etmiş sayılırsın.
+            </p>
+
+            <h2 data-i18n="terms_2_h">2. Sonuçların niteliği</h2>
+            <p data-i18n="terms_2_p">
+              Detectra tarafından üretilen tüm sonuçlar tahmindir ve %100
+              doğruluk garantisi vermez. Sonuçlar; akademik, hukuki, mesleki ya
+              da disiplin amaçlı kararlarda tek başına delil olarak kullanılamaz.
+              Hizmetin sağladığı bilgilere dayanarak alınan kararların
+              sorumluluğu tamamen kullanıcıya aittir.
+            </p>
+
+            <h2 data-i18n="terms_3_h">3. Kabul edilebilir kullanım</h2>
+            <p data-i18n="terms_3_p">Hizmeti kullanırken aşağıdakileri yapmamayı kabul edersin:</p>
+            <ul class="tech-list">
+              <li data-i18n="terms_3_li1">Yasa dışı, zararlı veya başkalarının haklarını ihlal eden içerik yüklemek,</li>
+              <li data-i18n="terms_3_li2">Hizmeti otomatik/aşırı isteklerle kötüye kullanmak veya aksatmak,</li>
+              <li data-i18n="terms_3_li3">Sonuçları birini taciz, iftira veya haksız suçlama için kullanmak,</li>
+              <li data-i18n="terms_3_li4">Sana ait olmayan ve paylaşım izni bulunmayan içerikleri yüklemek.</li>
+            </ul>
+
+            <h2 data-i18n="terms_4_h">4. Gizlilik</h2>
+            <p data-i18n="terms_4_p">
+              Girdiğin metin ve görseller yalnızca analizi gerçekleştirmek için
+              işlenir; kalıcı olarak saklanmaz veya üçüncü taraflarla pazarlama
+              amacıyla paylaşılmaz. Analiz, işlem için Groq'un altyapısına
+              iletilir ve bu işlem tamamlandığında içerik Detectra sunucusunda
+              tutulmaz. Yine de, tamamen özel veya hassas içerikleri yüklemeden
+              önce dikkatli olman önerilir.
+            </p>
+
+            <h2 data-i18n="terms_5_h">5. Fikri mülkiyet</h2>
+            <p data-i18n="terms_5_p">
+              Yüklediğin içeriğin haklarının sana ait olduğunu ya da yükleme
+              iznine sahip olduğunu beyan edersin. Detectra markası, tasarımı ve
+              kodu ise geliştiricisine aittir.
+            </p>
+
+            <h2 data-i18n="terms_6_h">6. Sorumluluğun sınırlandırılması</h2>
+            <p data-i18n="terms_6_p">
+              Hizmet "olduğu gibi" sunulur. Detectra ve geliştiricisi; hizmetin
+              kesintisiz veya hatasız olacağını garanti etmez ve hizmetin
+              kullanımından doğabilecek doğrudan ya da dolaylı zararlardan
+              sorumlu tutulamaz.
+            </p>
+
+            <h2 data-i18n="terms_7_h">7. Değişiklikler</h2>
+            <p data-i18n="terms_7_p">
+              Bu şartlar zaman zaman güncellenebilir. Güncel sürüm her zaman bu
+              sayfada yayınlanır ve yayınlandığı andan itibaren geçerli olur.
+            </p>
+
+            <h2 data-i18n="terms_8_h">8. İletişim</h2>
+            <p>
+              <span data-i18n="terms_8_p">Şartlarla ilgili sorular için:</span>
+              <a href="mailto:alpertasdemir32@gmail.com"
+                >alpertasdemir32@gmail.com</a
+              >
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="toast" id="toast" role="alert"></div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="brand-mark" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <span class="brand-name">Detectra</span>
+        </div>
+        <nav class="footer-nav">
+          <a href="#/" data-link data-i18n="nav_home">Ana Sayfa</a>
+          <a href="#/denetim" data-link data-i18n="nav_tool">Denetim</a>
+          <a href="#/hakkimda" data-link data-i18n="nav_about">Hakkımda</a>
+          <a href="#/sss" data-link data-i18n="nav_faq">SSS</a>
+          <a href="#/sartlar" data-link data-i18n="nav_terms">Şartlar</a>
+          <a href="mailto:alpertasdemir32@gmail.com" data-i18n="nav_contact">İletişim</a>
+        </nav>
+      </div>
+      <p class="footer-fine" data-i18n="footer_fine">
+        © 2026 Detectra · Sonuçlar olasılık tabanlı bir değerlendirmedir, kesin
+        kanıt değildir.
+      </p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
